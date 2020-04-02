@@ -8,13 +8,15 @@ if (window.localStorage.getItem('numVisits') === null) {
 numVisits = parseInt(window.localStorage.getItem('numVisits')) + 1
 window.localStorage.setItem('numVisits', numVisits)
 
-document.getElementById('pgViews').setAttribute('body', numVisits)
+document.getElementById('pgViews').innerHTML = numVisits
 
-document.getElementById('btn1').addEventListener('click', function () {
+document.getElementById('btn1').addEventListener('click', changeTime())
+
+function changeTime () {
   if (document.body.className === 'day-time') {
     document.body.setAttribute('class', 'night-time')
   }
   else {
     document.body.setAttribute('class', 'day-time')
   }
-})
+}
