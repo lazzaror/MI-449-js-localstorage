@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+}
+
+.day-time {
+  background-image: url('img/day.jpg');
+  background-size: cover;
+  min-height: 120vh;
+}
+
+.night-time {
+  background-image: url('img/night.jpg');
+  color: white;
+  background-size: cover;
+  min-height: 120vh;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
