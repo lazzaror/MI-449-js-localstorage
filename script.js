@@ -9,20 +9,22 @@ function loadTheme() {
 }
 
 /* Page Views Counter */
-var numVisits = 0
+function countVisits() {
+  var pgViews = 0
+  if (isNaN(window.localStorage.getItem('numVisits'))) {
+    window.localStorage.setItem('numVisits', '0')
+  }
 
-if (window.localStorage.getItem('numVisits') === null) {
-  window.localStorage.setItem('numVisits', 0)
+  pgViews = parseInt(window.localStorage.getItem('numVisits')) + 1
+  console.log('pgViews is ' + pgViews)
+  window.localStorage.setItem('numVisits', pgViews)
+  
+  console.log('numVisits is ' + window.localStorage.getItem('numVisits'))
+
+  document.getElementById('pgViews').innerHTML = pgViews
 }
 
-numVisits = parseInt(window.localStorage.getItem('numVisits')) + 1
-window.localStorage.setItem('numVisits', numVisits)
-
-document.getElementById('pgViews').innerHTML = numVisits
-
 /* Toggle Button */
-document.getElementById('btn1').addEventListener('click', changeTime())
-
 function changeTime() {
   if (document.body.className === 'day-time') {
     document.body.setAttribute('class', 'night-time')
@@ -33,3 +35,4 @@ function changeTime() {
     window.localStorage.setItem('pageTheme', 'day-time')
   }
 }
+

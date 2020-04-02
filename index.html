@@ -6,15 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>localStorage Assignment</title>
   <link rel="stylesheet" href="style.css">
-</head>
-
-<body onload="loadTheme()">
   <script src="script.js">
   </script>
-  <h1>Day & Night Toggler</h1>
-  You have visited this page <span class="pgViews"></span> time(s)!
-  <button onclick="changeTime()" id="btn1">Click Me!</button>
+</head>
 
+<body onload="loadTheme(); countVisits()">
+  <div class="text-container">
+    <h1>Day & Night Toggler</h1>
+    You have visited this page <span id="pgViews">Filler Text</span> time(s)!
+    <button onclick="changeTime()" id="btn1">Click Me!</button>
+  </div>
 </body>
 
 </html>
