@@ -15,10 +15,13 @@ function countVisits() {
     window.localStorage.setItem('numVisits', '0')
   }
 
+  if (isNaN(parseInt(window.localStorage.getItem('numVisits')))) {
+    pgViews = 0
+  }
   pgViews = parseInt(window.localStorage.getItem('numVisits')) + 1
   console.log('pgViews is ' + pgViews)
   window.localStorage.setItem('numVisits', pgViews)
-  
+
   console.log('numVisits is ' + window.localStorage.getItem('numVisits'))
 
   document.getElementById('pgViews').innerHTML = pgViews
