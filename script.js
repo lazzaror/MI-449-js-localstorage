@@ -11,18 +11,13 @@ function loadTheme() {
 /* Page Views Counter */
 function countVisits() {
   var pgViews = 0
-  if (isNaN(window.localStorage.getItem('numVisits'))) {
-    window.localStorage.setItem('numVisits', '0')
-  }
 
-  if (isNaN(parseInt(window.localStorage.getItem('numVisits')))) {
+  pgViews = parseInt(window.localStorage.getItem('numVisits'))
+  if (isNaN(pgViews)) {
     pgViews = 0
   }
-  pgViews = parseInt(window.localStorage.getItem('numVisits')) + 1
-  console.log('pgViews is ' + pgViews)
+  pgViews += 1
   window.localStorage.setItem('numVisits', pgViews)
-
-  console.log('numVisits is ' + window.localStorage.getItem('numVisits'))
 
   document.getElementById('pgViews').innerHTML = pgViews
 }
@@ -38,4 +33,3 @@ function changeTime() {
     window.localStorage.setItem('pageTheme', 'day-time')
   }
 }
-
